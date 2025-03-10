@@ -1,0 +1,17 @@
+.container {
+  margin-bottom: 1rem;
+}
+
+.container > p {
+  font-family: General Sans;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--grey4);
+}
+
+.container > h4 {
+  font-family: General Sans;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--black);
+}

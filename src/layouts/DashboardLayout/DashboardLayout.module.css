@@ -1,0 +1,22 @@
+.container {
+  height: 100svh;
+  padding-block: 54px;
+  padding-inline: 128px;
+  position: relative;
+}
+
+.container > section {
+  min-height: calc(100vh - 54px - var(--headerHeight));
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding-block: 0px;
+    padding-inline: 0px;
+  }
+
+  .container > section {
+    min-height: calc(100vh - var(--headerHeight));
+  }
+}

@@ -1,0 +1,65 @@
+.container {
+  padding: 70px 160px;
+  height: 100%;
+  width: 100%;
+}
+
+.container > h4 {
+  font-family: General Sans;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.container > p {
+  font-family: General Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 2rem;
+}
+
+.container > a {
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.consent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.consent > label {
+  font-family: "General Sans";
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  text-align: left;
+  color: var(--grey4);
+}
+
+.container > button {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .container > a {
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .container > button {
+    width: 100%;
+  }
+}

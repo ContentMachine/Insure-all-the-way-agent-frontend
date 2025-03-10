@@ -1,0 +1,36 @@
+.container {
+  width: 500px;
+  min-height: 400px;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.container > img {
+  width: 200px;
+  height: 200px;
+}
+
+.container > svg {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.container > h2 {
+  font-family: General Sans;
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 1rem;
+}
+
+.container > p {
+  font-family: General Sans;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+
+.container > button {
+  margin-inline: auto;
+}

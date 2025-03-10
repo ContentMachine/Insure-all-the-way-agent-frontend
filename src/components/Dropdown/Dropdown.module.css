@@ -1,0 +1,239 @@
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  position: relative;
+  user-select: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  margin: 12px 0;
+  color: var(--grey6);
+}
+
+.invalid,
+.inActive {
+  border: 1px solid var(--red);
+}
+
+.valid {
+  border: 1px solid var(--grey4);
+}
+
+.active {
+  border: 1px solid var(--yellow);
+}
+
+.dropdownButton:focus {
+  outline: none;
+}
+
+.dropdown .dropdownButton {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--black);
+  font-family: "General Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  animation: appear 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown svg {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropdown .dropdownContent {
+  position: absolute;
+  width: 100%;
+  top: 110%;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 2;
+  background: #ffffff;
+  min-height: 100%;
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  outline: none;
+  border: none;
+  animation: appear 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.dropdown .dropdownContent::-webkit-scrollbar {
+  display: none;
+}
+
+.dropdown .dropdownContent .dropdownItem {
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  font-family: "General Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  width: 100%;
+}
+
+.dropdown .dropdownContent .dropdownItem:hover {
+  background: var(--foundation-grey-g-20, #efefef);
+}
+
+.dropdownItem2 {
+  margin: 0;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  font-family: "General Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: -0.03em;
+  width: 100%;
+  cursor: pointer;
+}
+
+.inputSection {
+  height: 60px;
+  padding: 0.5rem 0.5rem;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.inputSection > input {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  text-indent: 8px;
+  font-family: "General Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: -0.03em;
+  background: #fcfcfc;
+  border: 0.5px solid #d8dce9;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.loadingContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.label {
+  font-family: "General Sans";
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 120%;
+  text-align: left;
+  display: block;
+}
+
+.label > span {
+  color: var(--red);
+}
+
+.errorMessage {
+  color: var(--red);
+  font-family: "General Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  animation: appear 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .dropdown {
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    padding: 0 12px;
+  }
+
+  .dropdown .dropdownButton {
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  .errorMessage {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .label,
+  .inputSection > input,
+  .dropdown .dropdownContent .dropdownItem {
+    font-size: 14px;
+    line-height: 23px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown {
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    padding: 0 12px;
+  }
+
+  .dropdown .dropdownButton {
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  .errorMessage {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .label,
+  .inputSection > input,
+  .dropdown .dropdownContent .dropdownItem {
+    font-size: 14px;
+    line-height: 23px;
+  }
+}

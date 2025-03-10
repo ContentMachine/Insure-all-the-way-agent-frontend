@@ -1,0 +1,161 @@
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.container {
+  margin-bottom: 16px;
+}
+
+.container > label {
+  font-family: "General Sans";
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+}
+
+.container > span:nth-child(2) {
+  color: var(--red);
+  font-family: General Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.input {
+  position: relative;
+  display: block;
+}
+
+.input > span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: po General Sans;
+}
+
+.input > textarea {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 5px 0;
+  border-radius: 12px;
+  animation: appear 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--grey4);
+  color: var(--black);
+  background: var(--white);
+  outline: 1px solid transparent;
+  resize: none;
+  min-height: 150px;
+}
+
+.input textarea:focus {
+  outline: 1px solid var(--yellow);
+}
+
+.input textarea:focus {
+  border: 1px solid #fff;
+}
+
+.valid {
+  border: 1px solid var(--gray);
+}
+
+.invalid {
+  border: 1px solid #ff6166;
+  color: #ff6166;
+}
+
+.input > textarea::placeholder {
+  color: #8897ad;
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: var(--geist-color-secondary-geist-secondary, #888888);
+}
+
+.errorMessage {
+  color: #ff6166;
+  font-family: General Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  animation: appear 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.tip {
+  font-family: General Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #e63e21;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .input > textarea {
+    padding: 12px;
+    font-family: General Sans;
+    font-size: 14px;
+    line-height: 23px;
+    border-radius: 5px;
+  }
+
+  .container > label {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .errorMessage {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .input > span {
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) and (max-width: 1023px) {
+  .input > textarea {
+    padding: 12px;
+    font-family: General Sans;
+    font-size: 14px;
+    line-height: 23px;
+    border-radius: 5px;
+  }
+
+  .container > label {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .errorMessage {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .input > span {
+    right: 10px;
+  }
+}
