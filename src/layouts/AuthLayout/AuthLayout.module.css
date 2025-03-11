@@ -3,6 +3,7 @@
   align-items: stretch;
   height: 100vh;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .container > div:nth-child(1) {
@@ -10,9 +11,9 @@
   position: relative;
 }
 
-.container > div:nth-child(2) {
+.container > form:nth-child(2) {
   flex-basis: 45%;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 .carouselContainer {

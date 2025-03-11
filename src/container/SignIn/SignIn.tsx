@@ -64,7 +64,7 @@ const SignIn = () => {
 
   return (
     <AuthLayout>
-      <div className={classes.container}>
+      <form className={classes.container}>
         <Logo />
         <h4>Welcome back, Agent</h4>
         <p>Securely Sign In to Manage Your Leads and Conversions</p>
@@ -95,7 +95,7 @@ const SignIn = () => {
         >
           Sign In
         </Button>
-      </div>
+      </form>
     </AuthLayout>
   );
 };

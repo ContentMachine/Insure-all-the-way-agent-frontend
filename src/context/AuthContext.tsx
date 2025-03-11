@@ -47,9 +47,13 @@ const AuthContextProvider = ({ children }: AuthContextProviderType) => {
       setState: setRequestState,
       successFunction(res) {
         setUser(res?.data?.user);
+
+        console.log(res, "Res");
       },
       errorFunction(err) {
-        // logout();
+        console.log(err, "Res");
+
+        logout();
         setUser(null);
       },
     });

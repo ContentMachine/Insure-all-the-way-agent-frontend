@@ -6,9 +6,7 @@ import React, { Suspense } from "react";
 const pahge = () => {
   return (
     <Suspense fallback={<Loader />}>
-      <DashboardLayout>
-        <Dashboard />
-      </DashboardLayout>
+      <Dashboard />
     </Suspense>
   );
 };

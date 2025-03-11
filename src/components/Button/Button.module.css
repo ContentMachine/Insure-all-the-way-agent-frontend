@@ -38,7 +38,7 @@
 .secondary {
   background: var(--yellow);
   border: 1.5px solid var(--yellow);
-  color: var(--white);
+  color: var(--black);
 }
 
 .secondary:active {
