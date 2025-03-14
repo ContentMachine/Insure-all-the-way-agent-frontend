@@ -11,6 +11,7 @@ import { modalGenericType, requestType } from "@/utilities/types";
 import React, { useMemo, useState } from "react";
 import { mutate } from "swr";
 import PolicyInformationModalBody from "../PolicyInformationModalBody/PolicyInformationModalBody";
+import MessageModalBody from "../MessageModalBody/MessageModalBody";
 
 export const policyHeaders = [
   "Policy Held",
@@ -29,7 +30,7 @@ const PoliciesTable = () => {
   const [activeUserId, setActiveUserId] = useState<null | string>(null);
   const [modals, setModals] = useState<modalGenericType>({
     policyDetails: false,
-    reassignAgent: false,
+    message: false,
   });
 
   //   Hooks
@@ -48,34 +49,16 @@ const PoliciesTable = () => {
     });
   }, [policiesData?.data]);
 
-  // Requests
-  const policyStatusToggleHandeler = () => {
-    requestHandler({
-      url: `/admin/policies/${activeUserId}/toggle-status`,
-      method: "PATCH",
-      requestCleanup: true,
-      state: requestState,
-      id: "toggle-policy-status",
-      setState: setRequestState,
-      successFunction(res) {
-        showToast(res?.data?.message, "success");
-        mutate(`/admin/policies/${activeUserId}`);
-        mutate(`/admin/policies`);
-      },
-      errorFunction(err) {
-        errorFlowFunction(err);
-      },
-    });
-  };
-
   const policiesOptions = [
     {
       text: "Send Policy Holder a Message",
-      action: () => {
-        setModalTrue(setModals, "reassignAgent");
+      action: (row: any) => {
+        setModalTrue(setModals, "message");
+        setActiveUserId(row?._id);
       },
     },
   ];
+
   return (
     <>
       {modals.policyDetails && (
@@ -90,26 +73,36 @@ const PoliciesTable = () => {
         />
       )}
 
+      {modals.message && (
+        <Modal
+          onClick={() => setAllModalsFalse(setModals)}
+          body={
+            <MessageModalBody
+              onClose={() => setAllModalsFalse(setModals)}
+              policyId={activeUserId as string}
+            />
+          }
+        />
+      )}
+
       <section>
-        {policies?.length > 0 && (
-          <CustomTable
-            header="Policies"
-            data={policies}
-            headers={policyHeaders}
-            options={policiesOptions}
-            fields={["insuranceType", "endDate", "userDetails", "status"]}
-            isOptions
-            setState={setActiveUserId}
-            onRowClick={() => {
-              setModalTrue(setModals, "policyDetails");
-            }}
-            loading={
-              (requestState?.id === "toggle-policy-status" &&
-                requestState?.isLoading) ||
-              policiesIsLoading
-            }
-          />
-        )}
+        <CustomTable
+          header="Policies"
+          data={policies}
+          headers={policyHeaders}
+          options={policiesOptions}
+          fields={["insuranceType", "endDate", "userDetails", "status"]}
+          isOptions
+          setState={setActiveUserId}
+          onRowClick={() => {
+            setModalTrue(setModals, "policyDetails");
+          }}
+          loading={
+            (requestState?.id === "toggle-policy-status" &&
+              requestState?.isLoading) ||
+            policiesIsLoading
+          }
+        />
       </section>
     </>
   );

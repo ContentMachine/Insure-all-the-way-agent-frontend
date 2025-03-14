@@ -1,0 +1,147 @@
+.header > h4 {
+  font-family: General Sans;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -2px;
+  text-underline-position: from-font;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.container {
+  background-color: var(--white);
+  padding: 2rem 0;
+}
+
+.header > p {
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 750px;
+  margin: 0 auto;
+  color: var(--grey4);
+  text-align: center;
+}
+
+.container > form {
+  margin: 2rem auto;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+.container > form > div:not(.container > form > div:last-child, .alert),
+.container > div > div:not(.container > div > div:last-child, .alert) {
+  flex-basis: calc(50% - 1rem);
+}
+
+.container > form > h4,
+.container > form > div:last-child,
+.alert {
+  flex-basis: 100%;
+}
+
+.alert > div {
+  border-radius: 10px;
+}
+
+.alert > div > div:nth-child(2) {
+  font-family: General Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+}
+
+.container > form > h4 {
+  font-family: General Sans;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -3px;
+  text-underline-position: from-font;
+  margin: 2rem auto;
+  text-align: center;
+  text-align: left;
+  margin: 2rem 0;
+}
+
+.loader {
+  background-color: #ffffffa1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 10rem;
+  font-family: General Sans;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .header > h4 {
+    font-family: General Sans;
+    font-size: 32px;
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .header > p {
+    font-family: General Sans;
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container > form {
+    margin: 2rem auto;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 14px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .container > form > div:not(.container > form > div:last-child),
+  .container > div > div:not(.container > div > div:last-child) {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .container > form > h4,
+  .container > form > div:last-child {
+    flex-basis: 100%;
+  }
+
+  .container > form > h4 {
+    font-size: 28px;
+    line-height: 120%;
+    letter-spacing: -2px;
+    margin: 1rem auto;
+  }
+}

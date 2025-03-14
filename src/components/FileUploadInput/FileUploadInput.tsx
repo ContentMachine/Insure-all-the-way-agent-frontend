@@ -13,6 +13,7 @@ type FileUploadInputTypes = {
   id?: string;
   accept?: string;
   supportedFormats?: string[];
+  multiple?: boolean;
 };
 
 const FileUploadInput = ({
@@ -22,6 +23,7 @@ const FileUploadInput = ({
   id,
   accept,
   supportedFormats,
+  multiple,
 }: FileUploadInputTypes) => {
   // States
   const [isDraggingOver, setIsDraggingOver] = useState(false);
@@ -73,7 +75,7 @@ const FileUploadInput = ({
         style={
           isDraggingOver
             ? { border: "2px dashed #fdd602" }
-            : { border: "1px solid #eaeaea" }
+            : { border: "1px solid #717171" }
         }
       >
         <Image src={upload} alt="Upload" />
@@ -87,6 +89,7 @@ const FileUploadInput = ({
           id={id || "file"}
           accept={accept}
           onChange={handleFileChange}
+          multiple={multiple}
         />
 
         {supportedFormats && (

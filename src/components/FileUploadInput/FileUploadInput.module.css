@@ -19,7 +19,6 @@
   align-items: center;
   padding: 2rem 1rem;
   border-radius: 12px;
-  border: 1px solid var(--gray);
 }
 
 .uploadContainer > h4 {
@@ -62,6 +61,7 @@
   border: 1px solid var(--yellow);
   overflow: hidden;
   border-radius: 4px;
+  margin-bottom: 0.5rem;
 }
 
 .uploaded > div > span {
