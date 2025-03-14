@@ -11,6 +11,7 @@ import { setAllModalsFalse, setModalTrue } from "@/helpers/modalHandlers";
 import { modalGenericType } from "@/utilities/types";
 import CreateLeadForm from "../CreateLeadForm/CreateLeadForm";
 import Plus from "@/assets/svgIcons/Plus";
+import DashboardTables from "../DashboardTables/DashboardTables";
 
 const Dashboard = () => {
   // States
@@ -40,6 +41,7 @@ const Dashboard = () => {
           </Button>
         </div>
         <DashboardStats />
+        <DashboardTables />
       </DashboardLayout>
     </>
   );

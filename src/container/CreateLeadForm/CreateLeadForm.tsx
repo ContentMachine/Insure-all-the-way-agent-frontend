@@ -32,6 +32,8 @@ const CreateLeadForm = ({ onClose }: CreateLeadFormTypes) => {
   const { errorFlowFunction } = useError();
   const { showToast } = useToast();
 
+  console.log(leadsData, "Leads");
+
   //   Requests
   const handleSubmitLead = () => {
     requestHandler({
@@ -43,6 +45,13 @@ const CreateLeadForm = ({ onClose }: CreateLeadFormTypes) => {
       successFunction: (res) => {
         showToast("Lead created Successfully", "success");
         console.log(res);
+        setLeadsData({
+          name: "",
+          phone: "",
+          numberPlate: "",
+          remark: "",
+          email: "",
+        });
       },
       errorFunction: (err) => {
         errorFlowFunction(err);
